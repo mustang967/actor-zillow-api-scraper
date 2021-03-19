@@ -651,7 +651,9 @@ Apify.main(async () => {
                     // Extract home data from mapResults
                     const thr = input.splitThreshold || 500;
 
-                    if (results.length >= thr) {
+                    //if (results.length >= thr) {
+                    if (mapResults.length >= thr) {
+
                         if (input.maxLevel && (request.userData.splitCount || 0) >= input.maxLevel) {
                             log.info('Over max level');
                         } else {
@@ -683,15 +685,16 @@ Apify.main(async () => {
                         }
                     }
 
-                    if (results.length > 0) {
+                    //if (results.length > 0) {
+                    if (mapResults.length > 0) {     
                         const extracted = () => {
                             log.info(`Extracted total ${zpids.size}`);
                         };
                         const interval = setInterval(extracted, 10000);
 
                         try {
-                            for (const { zpid, detailUrl } of results) {
-                                await dump(zpid, results);
+                            for (const { zpid, detailUrl } of mapResults) {
+                                await dump(zpid, mapResults);
 
                                 if (zpid) {
                                     await processZpid(zpid, detailUrl);
