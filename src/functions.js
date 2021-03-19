@@ -154,7 +154,7 @@ const queryRegionHomes = async ({ qs, type }) => {
     if (type === 'rent') {
         qs.filterState = {
             isForSaleByAgent: { value: false },
-            isForSaleByOwner: { value: false },
+            isListedByOwner: { value: false },
             isNewConstruction: { value: false },
             isForSaleForeclosure: { value: false },
             isComingSoon: { value: false },
@@ -166,7 +166,7 @@ const queryRegionHomes = async ({ qs, type }) => {
     } else if (type === 'fsbo') {
         qs.filterState = {
             isForSaleByAgent: { value: false },
-            isForSaleByOwner: { value: true },
+            isListedByOwner: { value: true },
             isNewConstruction: { value: false },
             isForSaleForeclosure: { value: false },
             isComingSoon: { value: false },
@@ -181,7 +181,7 @@ const queryRegionHomes = async ({ qs, type }) => {
             isAllHomes: { value: true },
             isRecentlySold: { value: true },
             isForSaleByAgent: { value: false },
-            isForSaleByOwner: { value: false },
+            isListedByOwner: { value: false },
             isNewConstruction: { value: false },
             isComingSoon: { value: false },
             isAuction: { value: false },
