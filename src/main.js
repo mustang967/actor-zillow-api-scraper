@@ -49,15 +49,21 @@ Apify.main(async () => {
                 bedrooms: true,
                 bathrooms: true,
                 price: true,
-                yearBuilt: true,
-                longitude: true,
+                //yearBuilt: true,
+                //longitude: true,
                 homeStatus: true,
-                latitude: true,
+               // latitude: true,
                 description: true,
                 livingArea: true,
-                currency: true,
+                //currency: true,
                 hdpUrl: true,
-                hugePhotos: true,
+                //hugePhotos: true,
+                isListedByOwner: true,
+                datePosted: true,
+                zestimate: true,
+
+
+
             }
             : {
                 datePosted: true,
